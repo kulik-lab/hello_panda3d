@@ -1,6 +1,7 @@
 from direct.showbase.ShowBase import ShowBase
 #import direct.directbase.DirectStart
 from panda3d.core import Material
+import simplepbr
 
 
 
@@ -9,6 +10,7 @@ class MyApp(ShowBase):
 
     def __init__(self):
         ShowBase.__init__(self)
+        simplepbr.init()
 
         # Load the environment model.
         self.scene = self.loader.loadModel("models/environment")
