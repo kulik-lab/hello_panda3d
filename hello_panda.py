@@ -1,6 +1,7 @@
 from direct.showbase.ShowBase import ShowBase
 #import direct.directbase.DirectStart
 from panda3d.core import Material
+from panda3d.core import *
 import simplepbr
 
 
@@ -35,6 +36,12 @@ class MyApp(ShowBase):
         myNode.setPos(0,4,0)
         #myNode.setAntialias(AntialiasAttrib.MAuto)
         myNode.reparentTo(self.render)
+
+        #LIGHTS
+        alight = AmbientLight('alight')
+        alight.setColor((0.2, 0.2, 0.2, 1))
+        alnp = render.attachNewNode(alight)
+        render.setLight(alnp)
 
 
 app = MyApp()
