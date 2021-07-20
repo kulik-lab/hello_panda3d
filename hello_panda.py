@@ -28,7 +28,10 @@ class MyApp(ShowBase):
 
         myNode = loader.loadModel("zielcube2.gltf") #Load the model to apply the material to
         #myNode.clearTexture()
-        myNode.setMaterial(myMaterial) #Apply the material to this nodePath
+        #myNode.setMaterial(myMaterial) #Apply the material to this nodePath
+        mats = myNode.findAllMaterials()
+        print(mats[0])
+        myNode.replaceMaterial(mats[0], myMaterial)
         myNode.setPos(0,4,0)
         #myNode.setAntialias(AntialiasAttrib.MAuto)
         myNode.reparentTo(self.render)
