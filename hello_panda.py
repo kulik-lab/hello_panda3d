@@ -24,7 +24,7 @@ class MyApp(ShowBase):
 
         myMaterial = Material()
         myMaterial.setShininess(55.0) #Make this material shiny
-        myMaterial.setAmbient((0, 0, 1, 1)) #Make this material blue
+        myMaterial.setAmbient((1, 0, 1, 1)) #Make this material blue
 
         myNode = loader.loadModel("zielcube2.gltf") #Load the model to apply the material to
         #myNode.clearTexture()
