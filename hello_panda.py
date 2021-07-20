@@ -24,11 +24,11 @@ class MyApp(ShowBase):
 
         myMaterial = Material()
         myMaterial.setShininess(55.0) #Make this material shiny
-        myMaterial.setAmbient((0, 1, 0, 1)) #Make this material blue
+        myMaterial.setAmbient((0, 0, 1, 1)) #Make this material blue
 
         myNode = loader.loadModel("zielcube2.gltf") #Load the model to apply the material to
         #myNode.clearTexture()
-        #myNode.setMaterial(myMaterial) #Apply the material to this nodePath
+        myNode.setMaterial(myMaterial) #Apply the material to this nodePath
         myNode.setPos(0,4,0)
         #myNode.setAntialias(AntialiasAttrib.MAuto)
         myNode.reparentTo(self.render)
