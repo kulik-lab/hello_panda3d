@@ -1,6 +1,7 @@
 from direct.showbase.ShowBase import ShowBase
 #import direct.directbase.DirectStart
 from panda3d.core import Material
+from panda3d.core import *
 import simplepbr
 
 
@@ -23,15 +24,24 @@ class MyApp(ShowBase):
 
 
         myMaterial = Material()
-        myMaterial.setShininess(55.0) #Make this material shiny
-        myMaterial.setAmbient((0, 1, 0, 1)) #Make this material blue
-
+        myMaterial.setShininess(5.0) #Make this material shiny
+        myMaterial.setAmbient((1, 0, 1, 1)) #Make this material blue
+        myMaterial.setDiffuse((1,0,0,1))
         myNode = loader.loadModel("zielcube2.gltf") #Load the model to apply the material to
         #myNode.clearTexture()
         #myNode.setMaterial(myMaterial) #Apply the material to this nodePath
+        mats = myNode.findAllMaterials()
+        print(mats[0])
+        myNode.replaceMaterial(mats[0], myMaterial)
         myNode.setPos(0,4,0)
         #myNode.setAntialias(AntialiasAttrib.MAuto)
         myNode.reparentTo(self.render)
+
+        #LIGHTS
+        alight = AmbientLight('alight')
+        alight.setColor((0.2, 0.2, 0.2, 1))
+        alnp = render.attachNewNode(alight)
+        render.setLight(alnp)
 
 
 app = MyApp()
