@@ -22,7 +22,7 @@ class MyApp(ShowBase):
         self.scene.setPos(-8, 42, 0)
         #render.setAntialias(AntialiasAttrib.MAuto)
 
-
+        a=230
         myMaterial = Material()
         myMaterial.setShininess(5.0) #Make this material shiny
         myMaterial.setAmbient((1, 0, 1, 1)) #Make this material blue
