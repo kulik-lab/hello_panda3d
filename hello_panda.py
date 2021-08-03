@@ -32,9 +32,11 @@ class MyApp(ShowBase):
         #myNode.setMaterial(myMaterial) #Apply the material to this nodePath
         mats = myNode.findAllMaterials()
         print(mats[0])
-        myNode.replaceMaterial(mats[0], myMaterial)
+        #myNode.replaceMaterial(mats[0], myMaterial)
+        #myShader = Shader.load("shader_test_0001.sha")
+        #myNode.setShader(myShader)
         myNode.setPos(0,4,0)
-        #myNode.setAntialias(AntialiasAttrib.MAuto)
+        myNode.setAntialias(AntialiasAttrib.MAuto)
         myNode.reparentTo(self.render)
 
         #LIGHTS
